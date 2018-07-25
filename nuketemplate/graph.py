@@ -71,6 +71,14 @@ class NukeNode(GenericNode):
         """
         for attr_, value in self._attr.iteritems():
             try:
+                # Check if the first 12 characters match "EXPRESSION:"
+                if str(value)[0:11] == "EXPRESSION:":
+                    # If they do, run the 'setExpression' command
+                    # on what comes after that. 
+                    expression = value[11:len(value)]
+                    self._nuke_node[attr_].setExpression(expression)
+                    return
+                # Otherwise continue on as before.
                 self._nuke_node[attr_].setValue(value)
             except TypeError:
                 self._nuke_node[attr_].setValue(str(value))
