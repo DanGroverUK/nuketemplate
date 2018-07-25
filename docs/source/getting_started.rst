@@ -137,7 +137,8 @@ A node in the template format must implement the following format:
 .. note::
 
     The ``attr`` and ``id`` keys are optional and will be ignored if not
-    specified.
+    specified. If an attribute's value begins with "EXPRESSION:" then the
+    string following this will be applied as an expression to the attribute.
 
 All values can be substituted using Jinja 2 templating, like in the example.
 

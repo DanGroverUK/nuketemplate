@@ -10,7 +10,7 @@ test_requirements = ['pytest', 'pytest-cov',
 
 setup(
     name = 'nuketemplate',
-    version = '0.2.0',
+    version = '0.2.1',
     description='A toolkit to build Nuke scripts with flexible templates, based on Jinja 2',
     long_description=readme,
     url='https://github.com/florianeinfalt/nuketemplate',
